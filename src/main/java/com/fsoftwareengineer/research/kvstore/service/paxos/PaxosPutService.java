@@ -39,7 +39,6 @@ public class PaxosPutService implements IPutService {
     Optional<AcceptResponse> acceptResponse = proposerService.accept(acceptRequest);
 
     // commit
-
     log.info("Committing {}", acceptResponse.get());
 
     return proposerService.commit(acceptRequest).get();

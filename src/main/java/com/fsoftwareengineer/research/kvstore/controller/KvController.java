@@ -5,7 +5,6 @@ import com.fsoftwareengineer.research.kvstore.service.IGetService;
 import com.fsoftwareengineer.research.kvstore.service.IPutService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class KvController {
 
   @Autowired
-  private final IGetService getService;
+  private final IGetService getService; // TODO: Use consensus-based get instead of direct read from persistence.
 
   @Autowired
   private final IPutService putService;

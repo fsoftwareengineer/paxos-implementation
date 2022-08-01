@@ -25,6 +25,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class ProposerService implements IProposerService {
 
+  // TODO: pass as constructor parameter
+  // TODO: need a add node / remove node endpoint and propagation for node discovery
   private static final List<IMessenger<PromiseRequest, PromiseResponse>> proposalMessengers = new ArrayList<>();
   private static final List<IMessenger<AcceptRequest, AcceptResponse>> acceptMessengers = new ArrayList<>();
   private static final List<IMessenger<AcceptRequest, DataModel>> commitMessenger = new ArrayList<>();

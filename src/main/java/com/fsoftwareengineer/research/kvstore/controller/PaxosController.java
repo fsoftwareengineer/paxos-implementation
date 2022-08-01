@@ -27,22 +27,19 @@ public class PaxosController {
 
   @PostMapping("/propose")
   public @ResponseBody PromiseResponse propose(@RequestBody PromiseRequest promiseRequest) {
-
-    // right now just promise all values for testing APIs.
+    // It will return a value.
     return acceptorService.promise(promiseRequest).get();
   }
 
   @PostMapping("/accept")
   public @ResponseBody AcceptResponse accept(@RequestBody AcceptRequest acceptRequest) {
-
-    // right now just promise all values for testing APIs.
+    // It will return a value.
     return acceptorService.accept(acceptRequest).get();
   }
 
   @PostMapping("/commit")
   public @ResponseBody DataModel commit(@RequestBody AcceptRequest acceptRequest) {
-
-    // right now just promise all values for testing APIs.
+    // It will return a value.
     return acceptorService.commit(acceptRequest);
   }
 }

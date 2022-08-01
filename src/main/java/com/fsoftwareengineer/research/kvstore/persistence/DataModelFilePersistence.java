@@ -21,15 +21,16 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
+/**
+ * Simple file persistence. Key is the file name and Value is the content.
+ */
 @Repository
 @Slf4j
 public class DataModelFilePersistence implements IDataModelPersistence {
 
-  private final String partition;
   private final String path;
 
   public DataModelFilePersistence(@Value("${serverName}") String partition) {
-    this.partition = partition;
 
     ClassLoader classLoader = getClass().getClassLoader();
     this.path = Objects.requireNonNull(classLoader.getResource(".")).getPath() + partition;
